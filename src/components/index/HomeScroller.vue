@@ -71,10 +71,25 @@ const load = () => {
 </script>
 
 <style lang="scss" scoped>
+.infinite-list-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.infinite-list-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
+  background: #193048;
+}
+.infinite-list-wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  //background: fade(@primary-color, 30%);
+}
 .infinite-list-wrapper {
   text-align: center;
   height: 80vh;
   width: 80%;
+
 
   .list {
     padding: 0;

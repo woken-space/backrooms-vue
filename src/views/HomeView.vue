@@ -1,13 +1,21 @@
 <script>
 import Menu from "@/components/Menu.vue";
-import Scroller from "@/components/index/Scroller.vue";
+import HomeScroller from "@/components/index/HomeScroller.vue";
+import HomeTop from "@/components/index/HomeTop.vue";
 
 export default {
-  components: {Menu, Scroller}
+  components: {HomeScroller, HomeTop, Menu}
 }
 </script>
 
 <template>
   <Menu/>
-  <Scroller/>
+  <div class="home-top">
+    <HomeTop/>
+  </div>
+  <div class="home-scroller">
+    <HomeScroller/>
+  </div>
 </template>
+<style lang="scss" scoped>
+</style>
