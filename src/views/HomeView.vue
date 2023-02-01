@@ -1,24 +1,13 @@
 <script>
 import Menu from "@/components/Menu.vue";
+import Scroller from "@/components/index/Scroller.vue";
 
 export default {
-  components: {Menu},
-  data() {
-    return {
-      name: 'zhangsan'
-    }
-  },
-  methods: {
-    change(){
-      this.name = "lisi"
-    }
-  }
+  components: {Menu, Scroller}
 }
 </script>
 
 <template>
   <Menu/>
-  <div style="">
-    你好世界
-  </div>
+  <Scroller/>
 </template>
