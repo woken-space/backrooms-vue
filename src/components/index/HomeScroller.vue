@@ -71,6 +71,7 @@ const load = () => {
 </script>
 
 <style lang="scss" scoped>
+// 滚动条
 .infinite-list-wrapper::-webkit-scrollbar {
   width: 8px;
 }
@@ -85,9 +86,10 @@ const load = () => {
   border-radius: 0;
   //background: fade(@primary-color, 30%);
 }
+// 列表
 .infinite-list-wrapper {
   text-align: center;
-  height: 80vh;
+  height: 1000px;
   width: 80%;
 
 
@@ -103,6 +105,7 @@ const load = () => {
 
     .el-card.is-always-shadow {
       flex: 1;
+      //background-color: #909399;
     }
 
     .card-lottie {

@@ -48,7 +48,8 @@ export default {
 }
 
 .item-logo{
-  background-color: #193048;
+  /*background-color: #909399;*/
+  color: #303133;
   border-radius: 5px;
   font-size: x-large;
 }

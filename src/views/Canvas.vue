@@ -1,9 +1,19 @@
-@import './base.css';
+<template>
+  <div class="background">
 
-html{
-  /*background-color: #EBEDF0;*/
+  </div>
+</template>
+
+<script>
+export default {
+  name: "canvas",
+  mounted() {
+
+  }
 }
+</script>
 
+<style lang="scss" scoped>
 :root {
   --falcon-light-color: #e8e8e8;
   --falcon-medium-color: #adadad;
@@ -13,19 +23,7 @@ html{
   --falcon-border-filter: drop-shadow(-5px 0 0 var(--falcon-border-color)) drop-shadow(0 -5px 0 var(--falcon-border-color)) drop-shadow(5px 0 0 var(--falcon-border-color)) drop-shadow(0 5px 0 var(--falcon-border-color));
 }
 
-#app {
-  /*max-width: 1280px;*/
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  /*background: linear-gradient(#adadad, #adadad);*/
-  height: 1600px;
-  overflow: hidden;
-}
+.background {
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
+</style>

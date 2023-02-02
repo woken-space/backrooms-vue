@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "element-plus": "^2.2.28",
+    "highlight.js": "^11.7.0",
     "lottie-web": "^5.10.2",
+    "mavon-editor": "^3.0.0-beta",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
