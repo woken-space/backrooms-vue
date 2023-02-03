@@ -45,26 +45,34 @@ import {computed, ref} from 'vue'
 import JsonData from '../../assets/lottie/飞行无人机.json'
 import Lottie from "../base/Lottie.vue";
 
-const dataList = ref([{
-  title: '万彩特效大师(限时送会员)——0基础轻松剪辑合成特效动画视频，不用AE也能制作特效大片',
-  description: '朋友们，我们日常制作特效视频，都是使用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然现在很多网站也提供了很多非常棒的AE',
-  postDate: '2023-02-01',
-  starCount: 322
-}])
 const count = computed(() => dataList.value.length)
 const loading = ref(false)
 const noMore = computed(() => count.value >= 20)
 const disabled = computed(() => loading.value || noMore.value)
 const jsonData = JsonData
-const load = () => {
-  loading.value = true
-  setTimeout(() => {
-    dataList.value.push({
+const dataList = computed(() => {
+  let dataList = []
+  for (let i = 0; i < 6; i++) {
+    dataList.push({
       title: '万彩特效大师(限时送会员)——0基础轻松剪辑合成特效动画视频，不用AE也能制作特效大片',
-      description: '朋友们，我们日常制作特效视频，都是使用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然现在很多网站也提供了很多非常棒的AE用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然',
+      description: '朋友们，我们日常制作特效视频，都是使用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然现在很多网站也提供了很多非常棒的AE',
       postDate: '2023-02-01',
       starCount: 322
     })
+  }
+  return dataList
+})
+const load = () => {
+  loading.value = true
+  setTimeout(() => {
+    for (let i = 0; i < 6; i++) {
+      dataList.value.push({
+        title: '万彩特效大师(限时送会员)——0基础轻松剪辑合成特效动画视频，不用AE也能制作特效大片',
+        description: '朋友们，我们日常制作特效视频，都是使用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然现在很多网站也提供了很多非常棒的AE用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然用AE， 但说实话，如果不是专业的AE设计师，用这软件还是有难度的。虽然',
+        postDate: '2023-02-01',
+        starCount: 322
+      })
+    }
     loading.value = false
   }, 500)
 }
@@ -75,22 +83,25 @@ const load = () => {
 .infinite-list-wrapper::-webkit-scrollbar {
   width: 8px;
 }
+
 .infinite-list-wrapper::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   opacity: 0.2;
   background: #193048;
 }
+
 .infinite-list-wrapper::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 0;
   //background: fade(@primary-color, 30%);
 }
+
 // 列表
 .infinite-list-wrapper {
   text-align: center;
-  height: 1000px;
-  width: 80%;
+  height: 100%;
+  width: 100%;
 
 
   .list {
@@ -102,10 +113,11 @@ const load = () => {
   .list-item {
     display: flex;
     align-items: center;
+    height: 192px;
 
     .el-card.is-always-shadow {
       flex: 1;
-      //background-color: #909399;
+      background-color: #fbfcfd;
     }
 
     .card-lottie {
@@ -128,13 +140,14 @@ const load = () => {
           font-weight: 500;
           font-family: YuYang-05, serif;
         }
-        a:hover{
+
+        a:hover {
           color: #083f7c;
         }
       }
 
       .content-description {
-        height: 52px;
+        height: 50px;
         margin-bottom: 34px;
         line-height: 1.625;
         color: var(--theme-gray-color);

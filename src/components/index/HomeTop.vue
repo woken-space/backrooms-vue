@@ -1,11 +1,10 @@
 <template>
-  <div class="top">
-    <Lottie
-        :json-data="jsonData"
-        width="100%"
-        height="100%"
-    />
-  </div>
+  <!--    <Lottie-->
+  <!--        :json-data="jsonData"-->
+  <!--        width="100%"-->
+  <!--        height="100%"-->
+  <!--    />-->
+  <div></div>
 </template>
 
 <script setup>
@@ -16,7 +15,10 @@ const jsonData = JsonData
 </script>
 
 <style lang="scss" scoped>
-.top {
-  height: 20vh;
+div{
+  display: flex;
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 100%;
 }
 </style>

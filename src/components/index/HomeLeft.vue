@@ -1,6 +1,6 @@
 <template>
-  <el-scrollbar>
-    <el-menu :default-openeds="['1', '3']">
+  <el-scrollbar class="left-scrollbar">
+    <el-menu :default-openeds="['1', '3']" class="left-menu">
       <el-sub-menu index="1">
         <template #title>
           <el-icon><message /></el-icon>Navigator One
@@ -62,6 +62,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.left-scrollbar{
+  height: 1400px;
+  .left-menu{
+    height: 1400px;
+  }
+}
 </style>

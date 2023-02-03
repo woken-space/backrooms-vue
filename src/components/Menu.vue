@@ -44,6 +44,8 @@ export default {
 
 <style scoped>
 .el-menu-demo {
+  height: 100%;
+  width: 100%;
   align-items: center;
 }
 
@@ -67,6 +69,7 @@ export default {
 }
 
 .search-input {
+  align-items: center;
   width: 40%;
   height: 100%;
 }
