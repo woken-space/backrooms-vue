@@ -1,92 +1,167 @@
 <template>
-  <iframe id="iframe" :src="src" frameborder="0" width="100%" height=""></iframe>
+  <div class="container">
+    <div class="bulb">
+      <div class="filaments"></div>
+    </div>
+  </div>
+  <div class="floor">
+    <div class="shadow"></div>
+  </div>
 </template>
 
 <script>
-import '../lib/smoke/jquery-1.4.2.min'
-import '../lib/smoke/jquery.qrcode'
-import '../lib/smoke/qrcode'
-
 export default {
   name: "canvas",
   data() {
-    return {
-      src: require('../lib/smoke/index.html')
-    }
+    return {}
   },
   computed: {},
   mounted() {
-    jQuery('#qrcodeTable').qrcode({width: 180, height: 180, text: $("#iframe").attr("src")});
-    window.onload = function () {
-      var hidemobilebtn = document.getElementById("hidemobile");
-      var showmobilebtn = document.getElementById("showmobile");
-      var mobileframe = document.getElementById("mobileFrame");
-      if (!hidemobilebtn) return false;
-      if (!showmobilebtn) return false;
-      if (!mobileframe) return false;
-      hidemobilebtn.onclick = function () {
-        mobileframe.style.display = "none";
-        showmobilebtn.style.display = "block";
-      }
-      showmobilebtn.onclick = function () {
-        this.style.display = "none";
-        mobileframe.style.display = "";
-      }
-    }
-    document.getElementById("mobileFrame").getElementsByTagName("iframe")[0].onload = function () {
-      this.style.width = "301px";
-    }
-    $(document).ready(function () {
-      $("#hidemobile").click(function () {
-        $("#mobileFrame").slideToggle();
-      });
+    const shadow = document.querySelector('.shadow');
+    const light = document.querySelector('.bulb');
+    const filaments = document.querySelector('.filaments');
+
+    light.addEventListener('click', function(){
+      light.classList.toggle('off');
+      shadow.classList.toggle('off');
+      filaments.classList.toggle('off');
     });
   }
 }
 </script>
 
 <style lang="scss" scoped>
-//.none {
-//  display: none !important
+//*, *::after, *::before {
+//  box-sizing: border-box;
 //}
-//@media screen and (max-width: 640px) {
-//  #mobileFrame {
-//    display: none !important;
-//  }
-//}
-//.qrcode {
-//  width: 287px;
-//  height: 320px;
-//  background: #f7f7f7;
-//  padding-top: 80px;margin: 1px 0 0 4px; text-align: center;
-//}
-//.qrcode table {
-//  vertical-align: middle;
-//  text-align: center;
-//  margin: 0px auto;
-//  width: 200px;
-//  padding: 1px;
-//  border: 1px solid #ccc;
-//  background: #fff;
-//}
-//.qrcode p {
-//  text-align: center;
-//  height: 36px;
-//  font-size: 15px;
-//  font-family: "微软雅黑 Light";
-//  color: #ff0000;
-//  line-height: 36px;
-//}
-//@media screen and (min-width: 640px) {
-//  .coright {
-//    position: absolute;
-//    bottom: 0px;
-//    height: 24px;
-//    line-height: 24px;
-//    color: #666;
-//    text-align: center;
-//    background: #fff;
-//    width: 100%;
-//  }
-//}
+
+.container {
+  width: 75px;
+  height: 500px;
+  animation: bulb-swing 3s infinite ease-in-out;
+  transform-origin: top center;
+
+  top: 0;
+  left: calc(50% - (75px/2));
+}
+
+.container.paused {
+  animation-play-state: paused;
+}
+
+.bulb {
+  z-index: 10;
+  display: block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  left: calc(50% - (75px/2));
+  background: #FFD700;
+  box-shadow: 5px 5px 80px gold, 5px -5px 80px gold, -5px 5px 80px gold, -5px -5px 80px gold;
+  cursor: pointer;
+}
+.bulb::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 50px;
+  bottom: 100%;
+  left: calc(50% - (35px/2));
+  z-index: -1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+// 灯泡线
+.bulb::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 250px;
+  background: black;
+  bottom: 100%;
+  left: calc(50% - 5px);
+  z-index: -1;
+}
+.bulb .filaments {
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: black;
+  top: 2px;
+  left: 28px;
+  box-shadow: 17px 0 black;
+  opacity: 0;
+}
+.bulb .filaments::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  background: black;
+  width: 2px;
+  height: 12px;
+  display: block;
+  box-shadow: 4.5px 0 black, 9px 0 black;
+}
+
+.bulb.off {
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid black;
+}
+
+.filaments.off {
+  opacity: 1;
+}
+
+@keyframes bulb-swing {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.floor {
+  position: absolute;
+  background: #000c19;
+  height: 200px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.floor .shadow {
+  position: absolute;
+  background: #524c11;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  box-shadow: 20px 20px 100px gold, -20px 20px 100px gold, 20px -20px 100px gold, -20px -20px 100px gold;
+  animation: shadow-swing 3s infinite ease-in-out;
+}
+
+.shadow.off {
+  background: #000c19;
+  box-shadow: none;
+}
+
+@keyframes shadow-swing {
+  0% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
 </style>

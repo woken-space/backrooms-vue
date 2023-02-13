@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import EditPost from "@/views/EditPost.vue";
 import Canvas from "@/views/Canvas.vue";
+import Wrod from "@/views/Wrod.vue";
 
 const router = createRouter({
     history: createWebHistory(/*import.meta.env.BASE_URL*/),
@@ -20,6 +21,11 @@ const router = createRouter({
             path: '/canvas',
             name: 'canvas',
             component: Canvas
+        },
+        {
+            path: '/word',
+            name: 'word',
+            component: Wrod
         },
         {
             path: '/:pathMatch(.*)*',

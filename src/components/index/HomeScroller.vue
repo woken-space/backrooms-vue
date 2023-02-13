@@ -117,7 +117,8 @@ const load = () => {
 
     .el-card.is-always-shadow {
       flex: 1;
-      background-color: #fbfcfd;
+      background-color: #33393f;
+      color: #0dcaf0;
     }
 
     .card-lottie {
@@ -142,7 +143,7 @@ const load = () => {
         }
 
         a:hover {
-          color: #083f7c;
+          color: #198754;
         }
       }
 

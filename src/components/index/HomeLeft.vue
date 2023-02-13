@@ -1,9 +1,12 @@
 <template>
-  <el-scrollbar class="left-scrollbar">
-    <el-menu :default-openeds="['1', '3']" class="left-menu">
-      <el-sub-menu index="1">
+  <el-scrollbar>
+    <el-menu :default-openeds="['1', '3']">
+      <el-sub-menu class="left-sub-menu" index="1">
         <template #title>
-          <el-icon><message /></el-icon>Navigator One
+          <el-icon>
+            <message/>
+          </el-icon>
+          Navigator One
         </template>
         <el-menu-item-group>
           <template #title>Group 1</template>
@@ -20,7 +23,10 @@
       </el-sub-menu>
       <el-sub-menu index="2">
         <template #title>
-          <el-icon><icon-menu /></el-icon>Navigator Two
+          <el-icon>
+            <icon-menu/>
+          </el-icon>
+          Navigator Two
         </template>
         <el-menu-item-group>
           <template #title>Group 1</template>
@@ -37,7 +43,10 @@
       </el-sub-menu>
       <el-sub-menu index="3">
         <template #title>
-          <el-icon><setting /></el-icon>Navigator Three
+          <el-icon>
+            <setting/>
+          </el-icon>
+          Navigator Three
         </template>
         <el-menu-item-group>
           <template #title>Group 1</template>
@@ -63,10 +72,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.left-scrollbar{
+.el-scrollbar {
   height: 1400px;
-  .left-menu{
+
+  .el-menu {
     height: 1400px;
+    background-color: #1d1d1d;
+    color: #0b55c1;
+
+    Template {
+      background-color: #1d1d1d;
+      color: #0b55c1;
+    }
   }
+}
+
+//.el-menu-item {
+//  background-color: #1d1d1d;
+//  color: #0b55c1;
+//}
+//
+//.el-menu-item-group {
+//  background-color: #1d1d1d;
+//  color: #0b55c1;
+//}
+//
+//.el-sub-menu {
+//  background-color: #1d1d1d;
+//  color: #0b55c1;
+//}
+* {
+  background-color: #bdbdbd;
+  color: #000000;
 }
 </style>

@@ -1,0 +1,23 @@
+GET http://10.10.11.6:9527/xjrsoft-contract-service/metadata?signingDateStart=2023-02-12
+Authorization: Bearer 3e6a5b7b6061881d0f826ae828502244_1675995842_hlvjId4K1AwZjq6mDmTcRPC18hfCuOzFflAqxgUd
+
+
+###
+GET https://balala.io/user/ajax_data/table/traffic_log?pagination%5Bpage%5D=1&pagination%5Bpages%5D=38&pagination%5Bperpage%5D=10&pagination%5Btotal%5D=374&sort%5Bsort%5D=desc&sort%5Bfield%5D=id&query=
+:authority: balala.io
+:method: GET
+:path: /user/ajax_data/table/traffic_log?pagination%5Bpage%5D=1&pagination%5Bpages%5D=38&pagination%5Bperpage%5D=10&pagination%5Btotal%5D=374&sort%5Bsort%5D=desc&sort%5Bfield%5D=id&query=
+:scheme: https
+accept: application/json, text/javascript, */*; q=0.01
+accept-encoding: gzip, deflate, br
+accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+cookie: lang=zh-cn; PHPSESSID=ff45i0qrfupli2kecfrr7opdr3; uid=63981; email=1411946807%40qq.com; key=31379756554fc3f890a35692d1fb2dbf601568dd9d198; ip=064cd9b091f7dfe2c93c81b4ea35c69b; expire_in=1676620046; mtauth=91fd6bf3f62e5ad874faa7ae3a93603e
+referer: https://balala.io/user/setting/traffic_log
+sec-ch-ua: "Not_A Brand";v="99", "Microsoft Edge";v="109", "Chromium";v="109"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.78
+x-requested-with: XMLHttpRequest
