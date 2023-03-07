@@ -1,33 +1,21 @@
-@import './base.css';
-
-html{
-  /*background-color: #EBEDF0;*/
+html {
+    width: 100%;
+    height: 100%;
 }
 
-:root {
-  --falcon-light-color: #e8e8e8;
-  --falcon-medium-color: #adadad;
-  --falcon-medium-dark-color: #858585;
-  --falcon-dark-color: #4c4c4c;
-  --falcon-border-color: #050505;
-  --falcon-border-filter: drop-shadow(-5px 0 0 var(--falcon-border-color)) drop-shadow(0 -5px 0 var(--falcon-border-color)) drop-shadow(5px 0 0 var(--falcon-border-color)) drop-shadow(0 5px 0 var(--falcon-border-color));
+body {
+    width: 100%;
+    height: 100%;
+    line-height: 1.6;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #app {
-  /*max-width: 1280px;*/
-  margin-left: 10px;
-  margin-right: 10px;
-  /*margin: 0 auto;*/
-  padding: 2rem;
-  font-weight: normal;
-  /*background: linear-gradient(#adadad, #adadad);*/
-  /*height: 1600px;*/
-  overflow: hidden;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+    width: 100%;
+    height: 100%;
+    font-weight: normal;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
 }

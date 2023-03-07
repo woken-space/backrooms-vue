@@ -117,8 +117,6 @@ const load = () => {
 
     .el-card.is-always-shadow {
       flex: 1;
-      background-color: #33393f;
-      color: #0dcaf0;
     }
 
     .card-lottie {
@@ -189,7 +187,7 @@ const load = () => {
   }
 
   .list-item + .list-item {
-    margin-top: 10px;
+    margin-top: 2px;
   }
 
 }

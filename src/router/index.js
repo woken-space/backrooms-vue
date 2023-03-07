@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import EditPost from "@/views/EditPost.vue";
 import Canvas from "@/views/Canvas.vue";
-import Wrod from "@/views/Wrod.vue";
+import Login from "@/views/Login.vue";
 
 const router = createRouter({
     history: createWebHistory(/*import.meta.env.BASE_URL*/),
@@ -13,6 +13,11 @@ const router = createRouter({
             component: HomeView
         },
         {
+            path: "/login",
+            name: 'login',
+            component: Login
+        },
+        {
             path: '/edit',
             name: 'edit',
             component: EditPost
@@ -21,11 +26,6 @@ const router = createRouter({
             path: '/canvas',
             name: 'canvas',
             component: Canvas
-        },
-        {
-            path: '/word',
-            name: 'word',
-            component: Wrod
         },
         {
             path: '/:pathMatch(.*)*',

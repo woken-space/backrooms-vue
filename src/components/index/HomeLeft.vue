@@ -77,32 +77,6 @@ export default {
 
   .el-menu {
     height: 1400px;
-    background-color: #1d1d1d;
-    color: #0b55c1;
-
-    Template {
-      background-color: #1d1d1d;
-      color: #0b55c1;
-    }
   }
-}
-
-//.el-menu-item {
-//  background-color: #1d1d1d;
-//  color: #0b55c1;
-//}
-//
-//.el-menu-item-group {
-//  background-color: #1d1d1d;
-//  color: #0b55c1;
-//}
-//
-//.el-sub-menu {
-//  background-color: #1d1d1d;
-//  color: #0b55c1;
-//}
-* {
-  background-color: #bdbdbd;
-  color: #000000;
 }
 </style>
