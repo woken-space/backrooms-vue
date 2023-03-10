@@ -14,7 +14,6 @@ import router from './router'
 
 import './assets/main.css'
 import './assets/fonts/fonts.css'
-// word
 
 const app = createApp(App)
 

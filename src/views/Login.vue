@@ -10,21 +10,23 @@
             <el-input type="string"
                       autocomplete="off"
                       v-model="mail"
-                      placeholder="请输入邮箱"/>
-            <el-input type="string"
-                      autocomplete="off"
-                      v-model="username"
-                      placeholder="请输入用户名"/>
+                      placeholder="请输入邮箱/用户名"/>
             <el-input type="password"
                       autocomplete="off"
                       v-model="password"
                       :show-password="true"
                       placeholder="请输入密码"/>
-            <el-input type="password"
+            <el-input type="string"
                       autocomplete="off"
-                      v-model="checkPass"
+                      v-model="captchaText"
                       :show-password="true"
-                      placeholder="确认密码"/>
+                      placeholder="请输入验证码">
+              <template #append>
+                <div class="login_code" @click="refreshCode">
+                  <Sidentify :identifyCode="identifyCode"/>
+                </div>
+              </template>
+            </el-input>
             <div class="option">
               <el-button>提交</el-button>
             </div>
@@ -61,12 +63,35 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
+import Sidentify from "@/components/Sidentify.vue";
+
 const activeName = ref('login')
 const mail = ref('')
 const username = ref('')
 const password = ref('')
 const checkPass = ref('')
+const captchaText = ref('')
+const identifyCodes = "1234567890"
+const identifyCode = ref('8888')
+const randomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
+}
+const makeCode = (o, l) => {
+  for (let i = 0; i < l; i++) {
+    identifyCode.value += o[
+        randomNum(0, o.length)
+        ];
+  }
+}
+const refreshCode = () => {
+  identifyCode.value = "";
+  makeCode(identifyCodes, 4);
+}
+onMounted(() => {
+  identifyCode.value = "";
+  makeCode(identifyCodes, 4);
+})
 </script>
 
 <style lang="scss">
@@ -90,11 +115,13 @@ const checkPass = ref('')
       flex: 1;
     }
 
-    .login-input {
+    .el-tabs {
       flex: 5;
+    }
+
+    .login-input {
       width: 500px;
       height: 500px;
-      display: flex;
       flex-direction: column;
       justify-content: center;
 
@@ -105,6 +132,19 @@ const checkPass = ref('')
         .el-input__wrapper {
           box-shadow: none;
           border-bottom: 1px solid #ccc;
+        }
+
+        .el-input-group__append {
+          width: 100px;
+          height: 50px;
+          padding: 0;
+
+          .s-canvas {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
         }
       }
 
